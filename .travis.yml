@@ -9,12 +9,12 @@ script:
   - docker run -e CI=true react-test npm test
 
 after_success:
-  - docker build -t complex-client ./client
-  - docker build -t complex-nginx ./nginx
-  - docker build -t complex-server ./server
-  - docker build -t complex-worker ./worker
+  - docker build -t arumiantsau/complex-client ./client
+  - docker build -t arumiantsau/complex-nginx ./nginx
+  - docker build -t arumiantsau/complex-server ./server
+  - docker build -t arumiantsau/complex-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push complex-client
-  - docker push complex-nginx
-  - docker push complex-server
-  - docker push complex-worker
+  - docker push arumiantsau/complex-client
+  - docker push arumiantsau/complex-nginx
+  - docker push arumiantsau/complex-server
+  - docker push arumiantsau/complex-worker
