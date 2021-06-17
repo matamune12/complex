@@ -18,7 +18,6 @@ after_success:
   - docker push arumiantsau/complex-nginx
   - docker push arumiantsau/complex-server
   - docker push arumiantsau/complex-worker
-
   deploy:
     provider: elascticbeanstalk
     region: eu-central-1
